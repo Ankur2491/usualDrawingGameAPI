@@ -7,10 +7,9 @@ var wordList = { "words": ["world", "tea", "mochi", "stickers", "candy", "ucla",
 var server = app.listen(4000, () => {
     console.log('listening on port 4000');
 })
-var io = socket(httpServer, {
+var io = require('socket.io')(server, {
   cors: {
-    origin: "https://usual-drawing-game.vercel.app",
-    methods: ["GET", "POST", "OPTIONS"]
+    origin: "*"
   }
 });
 userrooms = {};
